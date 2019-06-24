@@ -12,27 +12,18 @@ export default {
 	name: "Conversor",
 	props: ["moedaA","moedaB"],
 	data() {
-		return {
-			moedaA_value: "",
-			moedaB_value: 0
-		}
+		return {moedaA_value: "",moedaB_value: 0}
 	},
 	methods:{
-	
 		converter() {
-		
 			let de_para = this.moedaA + "_" + this.moedaB;
-		
 			let url = "http://free.currencyconverterapi.com/api/v5/converter=?q="+de_para+"L&compact=y";
-			
 			fetch(url).then(res=>{return res.json()})
-				      .then(json=>{
-							let cotacao = json[de_para].val;
-							this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
-					  });
-		
+			          .then(json=>{
+				  	let cotacao = json[de_para].val;
+				  	this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
+				   });
 		}
-	
 	}
 }
 </script>
