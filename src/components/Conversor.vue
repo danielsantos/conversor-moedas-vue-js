@@ -18,11 +18,7 @@ export default {
 		converter() {
 			let de_para = this.moedaA + "_" + this.moedaB;
 			let url = "http://free.currencyconverterapi.com/api/v5/converter=?q="+de_para+"L&compact=y";
-			fetch(url).then(res=>{return res.json()})
-			          .then(json=>{
-				  	let cotacao = json[de_para].val;
-				  	this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
-				   });
+			fetch(url).then(res=>{return res.json()}).then(json=>{let cotacao = json[de_para].val;this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);});
 		}
 	}
 }
