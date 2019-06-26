@@ -1,6 +1,6 @@
-# conversor
+# Currency Converter
 
-Basic project in VueJS - Currency Converter
+Basic project in VueJS
 
 ## Project setup
 ```
