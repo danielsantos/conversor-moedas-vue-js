@@ -1,5 +1,7 @@
 # conversor
 
+## Basic project in VueJS - Currency Converter
+
 ## Project setup
 ```
 npm install
